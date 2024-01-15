@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".presentation.new_task.NewTaskFragment">
+
+    <TextView
+        android:id="@+id/tv_fragment_new_task_subtitle_main"
+        style="@style/Title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Новый таймер"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fragment_new_task_subtitle_main"
+        app:layout_constraintVertical_bias="0.3">
+
+        <TextView
+            android:id="@+id/tv_fragment_new_task_subtitle_name"
+            style="@style/Caption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Название"
+            app:layout_constraintEnd_toEndOf="@+id/et_fragment_new_task_name"
+            app:layout_constraintStart_toStartOf="@+id/et_fragment_new_task_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_fragment_new_task_name"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"
+            android:elevation="@dimen/elevation"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_new_task_subtitle_name" />
+
+        <TextView
+            android:id="@+id/tv_fragment_new_task_subtitle_work_time"
+            style="@style/Caption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Время работы"
+            app:layout_constraintEnd_toEndOf="@+id/cv_fragment_new_task_work_time"
+            app:layout_constraintStart_toStartOf="@+id/cv_fragment_new_task_work_time"
+            app:layout_constraintTop_toBottomOf="@+id/et_fragment_new_task_name" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_fragment_new_task_work_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/background_support"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_new_task_subtitle_work_time">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_support"
+                android:elevation="@dimen/elevation">
+
+                <TextView
+                    android:id="@+id/tv_fragment_new_task_work_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="25 min"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_new_task_work_time_minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_minus"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_work_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_work_time"
+                    app:tint="@color/gray_light" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_new_task_work_time_plus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_plus"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_work_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_work_time"
+                    app:tint="@color/gray_light" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_fragment_new_task_subtitle_relax_time"
+            style="@style/Caption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Время отдыха"
+            app:layout_constraintEnd_toEndOf="@+id/cv_fragment_new_task_relax_time"
+            app:layout_constraintStart_toStartOf="@+id/cv_fragment_new_task_relax_time"
+            app:layout_constraintTop_toBottomOf="@+id/cv_fragment_new_task_work_time" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_fragment_new_task_relax_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/background_support"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_new_task_subtitle_relax_time">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_support"
+                android:elevation="@dimen/elevation">
+
+                <TextView
+                    android:id="@+id/tv_fragment_new_task_relax_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="25 min"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_new_task_relax_time_minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_minus"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_relax_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_relax_time"
+                    app:tint="@color/gray_light" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_new_task_relax_time_plus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_plus"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_relax_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_relax_time"
+                    app:tint="@color/gray_light" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_fragment_new_task_subtitle_tomato"
+            style="@style/Caption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="64dp"
+            android:text="Помидорки"
+            app:layout_constraintEnd_toEndOf="@+id/cv_fragment_new_task_tomato"
+            app:layout_constraintStart_toEndOf="@+id/iv_fragment_new_task_tomato"
+            app:layout_constraintTop_toBottomOf="@+id/cv_fragment_new_task_relax_time" />
+
+        <ImageView
+            android:id="@+id/iv_fragment_new_task_tomato"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/im_tomato"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_subtitle_tomato"
+            app:layout_constraintEnd_toStartOf="@+id/tv_fragment_new_task_subtitle_tomato"
+            app:layout_constraintStart_toStartOf="@+id/cv_fragment_new_task_tomato"
+            app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_subtitle_tomato" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_fragment_new_task_tomato"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/background_support"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fragment_new_task_subtitle_tomato">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_support"
+                android:elevation="@dimen/elevation">
+
+                <TextView
+                    android:id="@+id/tv_fragment_new_task_tomato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="8"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_new_task_tomato_minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_minus"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_tomato"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_tomato"
+                    app:tint="@color/gray_light" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_new_task_tomato_plus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_plus"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_fragment_new_task_tomato"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fragment_new_task_tomato"
+                    app:tint="@color/gray_light" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_fragment_new_task_create"
+            style="@style/OrangeButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:text="Создать"
+            app:layout_constraintEnd_toEndOf="@+id/et_fragment_new_task_name"
+            app:layout_constraintStart_toStartOf="@+id/et_fragment_new_task_name"
+            app:layout_constraintTop_toBottomOf="@+id/cv_fragment_new_task_tomato" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
